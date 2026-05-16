@@ -17,7 +17,7 @@ export default function ObracuniPregled(){
     }
 
     async function obrisi(sifra) {
-        if(!confirm('Sigurno obrisati obracun?')) return
+        if(!confirm('Sigurno obrisati obračun?')) return
         await ObracuniService.obrisi(sifra)
         ucitajObracune()
     }
@@ -25,7 +25,7 @@ export default function ObracuniPregled(){
     return(
         <>
         <Link to={RouteNames.OBRACUNI_NOVI} className="btn btn-success w-100 my-3">
-            Dodaj novi obracun
+            Dodaj novi obračun
         </Link>
         <Table striped bordered hover>
             <thead>
@@ -35,9 +35,9 @@ export default function ObracuniPregled(){
                     <th>Bruto (€)</th>
                     <th>Radni sati</th>
                     <th>Prekovremeni</th>
-                    <th>Staz (god.)</th>
+                    <th>Staž (god.)</th>
                     <th>Neto (€)</th>
-                    <th>Isplaceno</th>
+                    <th>Isplaćeno</th>
                     <th>Akcija</th>
                 </tr>
             </thead>
@@ -60,11 +60,11 @@ export default function ObracuniPregled(){
                         </td>
                         <td>
                             <Button onClick={()=>{navigate(`/obracuni/${obracun.sifra}`)}}>
-                                Promjeni
+                                Promijeni
                             </Button>
                             &nbsp;&nbsp;
                             <Button variant="danger" onClick={()=>{obrisi(obracun.sifra)}}>
-                                Obrisi
+                                Obriši
                             </Button>
                         </td>
                     </tr>

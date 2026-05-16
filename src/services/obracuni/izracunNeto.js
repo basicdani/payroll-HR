@@ -1,4 +1,4 @@
-// Izracun neto place po hrvatskim propisima
+// Izračun neto plaće po hrvatskim propisima
 export function izracunajNeto(bruto) {
     const mio1 = bruto * 0.15        // MIO I. stup 15%
     const mio2 = bruto * 0.05        // MIO II. stup 5%

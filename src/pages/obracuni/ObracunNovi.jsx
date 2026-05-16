@@ -34,7 +34,7 @@ export default function ObracunNovi(){
 
     return (
         <>
-            <h3>Unos novog obracuna place</h3>
+            <h3>Unos novog obračuna plaće</h3>
             <Form onSubmit={odradiSubmit}>
                 <Form.Group controlId="ime">
                     <Form.Label>Ime i prezime</Form.Label>
@@ -46,20 +46,20 @@ export default function ObracunNovi(){
                         <option>Direktor</option>
                         <option>Voditelj</option>
                         <option>Referent</option>
-                        <option>Racunovodja</option>
-                        <option>Tehnicar</option>
-                        <option>Skladistar</option>
+                        <option>Računovođa</option>
+                        <option>Tehničar</option>
+                        <option>Skladištar</option>
                         <option>Djelatnik</option>
                     </Form.Select>
                 </Form.Group>
                 <Form.Group controlId="brutoPlaca">
-                    <Form.Label>Bruto placa (€)</Form.Label>
+                    <Form.Label>Bruto plaća (€)</Form.Label>
                     <Form.Control type="number" name="brutoPlaca" min="0" step="0.01"
                         onChange={(e)=>setBruto(e.target.value)} />
                 </Form.Group>
                 {bruto > 0 && (
                     <div style={{padding: '10px', background: '#f0f8f0', borderRadius: '6px', marginBottom: '12px'}}>
-                        <strong>Izracunati neto: {netoPreview.toFixed(2)} €</strong>
+                        <strong>Izračunati neto: {netoPreview.toFixed(2)} €</strong>
                         <small style={{display: 'block', color: '#666'}}>
                             MIO I. (15%): {(bruto*0.15).toFixed(2)}€ |
                             MIO II. (5%): {(bruto*0.05).toFixed(2)}€ |
@@ -76,16 +76,16 @@ export default function ObracunNovi(){
                     <Form.Control type="number" name="prekovremeni" defaultValue={0} min="0" />
                 </Form.Group>
                 <Form.Group controlId="staz">
-                    <Form.Label>Godine radnog staza</Form.Label>
+                    <Form.Label>Godine radnog staža</Form.Label>
                     <Form.Control type="number" name="staz" defaultValue={0} min="0" max="50" />
                 </Form.Group>
                 <Form.Group controlId="isplaceno">
-                    <Form.Check label="Isplaceno" name="isplaceno"
+                    <Form.Check label="Isplaćeno" name="isplaceno"
                         checked={isplaceno} onChange={(e)=>setIsplaceno(e.target.checked)} />
                 </Form.Group>
                 <Row className="mt-4">
                     <Col><Link to={RouteNames.OBRACUNI} className="btn btn-danger">Odustani</Link></Col>
-                    <Col><Button type="submit" variant="success">Dodaj obracun</Button></Col>
+                    <Col><Button type="submit" variant="success">Dodaj obračun</Button></Col>
                 </Row>
             </Form>
         </>
